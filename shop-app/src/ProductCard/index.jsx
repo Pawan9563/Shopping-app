@@ -1,12 +1,19 @@
-
+import './index1.css';
+import {useState} from 'react'
 export const ProductCard = ({ product }) => {
+  const [isFav,setIsfav] = useState(false);
   return (
     <div className="w-64 bg-white shadow-md rounded-xl overflow-hidden hover:shadow-lg transition">
-      <img
-        src={product.images[0]}
-        alt={product.title}
-        className="h-40 w-full object-cover"
-      />
+      <div className='relative'>
+        <img
+          src={product.images[0]}
+          alt={product.title}
+          className="h-40 w-full object-cover"
+        />
+        <button className="absolute top-1 right-1" onClick={() => setIsfav(!isFav)}>
+          <span className={`material-symbols-outlined ${isFav ? 'icon-filled' : ''}`}>favorite</span>
+        </button>
+      </div>
 
       <div className="p-4">
         <h2 className="text-lg font-semibold truncate">{product.title}</h2>

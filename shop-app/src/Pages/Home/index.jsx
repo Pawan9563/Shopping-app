@@ -15,7 +15,7 @@ export const Home = () =>{
     return(
         <>
             <NavBar/>
-            <div className="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="flex flex-wrap gap-8 pt-8 justify-center">
                 {products.map((p) => (
                 <ProductCard key={p.id} product={p} />
                 ))}
